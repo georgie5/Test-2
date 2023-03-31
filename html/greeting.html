@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Greeting Page</title>
+
+<script> 
+		function updateTime() {
+			var now = new Date();
+			var time = now.toLocaleTimeString();
+			document.getElementById("datetime").innerHTML = " " + time;
+		}
+      
+		// call updateTime every second to update the time
+		setInterval(updateTime, 1000);
+	</script>
+	<style>
+		 body {
+                background-color: #001b75;
+                font-family: Arial, sans-serif;
+            }
+            header {
+                background-color: rgb(0, 0, 0);
+                color: white;
+                padding: 13vh;
+                text-align: center;
+                font-size: 50px;
+            }
+			.container{
+				text-align: center;
+				padding-top: 40px;
+			}
+			.container p {
+				font-family: Outfit;
+				color: white;
+				font-size: 50px;
+				display: inline-block;	
+        	}
+	</style>
+</head>
+<header>
+    <h1>Greeting Page</h1>
+</header>
+<body>
+	<div class="container">
+		<p>Today is {{ . }} and the time is </p>
+		<p id="datetime"></p> 
+	</div>
+	
+</body>
+</html>
